@@ -22,7 +22,7 @@ void loop(){
   while(run){
     for(int i = 0; i<count; i++){
       record(possition);
-      delay(1000);
+      delay(500);
       possition++;
     }
     for(int i = 0; i<count; i++){
@@ -60,26 +60,29 @@ void record(int poss){
   boolean run = true;
   while(true){
     Serial.print("1: ");
-    Serial.println(analogRead(photo1));
-    if (analogRead(photo1) >= ave(photo2, photo3, photo4)){
+    Serial.print(analogRead(photo1));
+    Serial.println("  ");
+    if (analogRead(photo1) >= 700)){
       colors[poss] = 1;
       break;
     }
     Serial.print("2: ");
-    Serial.println(analogRead(photo2));    
-    if (analogRead(photo2) >= ave(photo1, photo3, photo4)){
+    Serial.print(analogRead(photo2));
+    Serial.println("  ");    
+    if (analogRead(photo2) >= 700)){
       colors[poss] = 2;
       break;
     }
     Serial.print("3: ");
-    Serial.println(analogRead(photo3));
-    if (analogRead(photo3) >= ave(photo1, photo2, photo4)){
+    Serial.print(analogRead(photo3));
+    Serial.println("  ");
+    if (analogRead(photo3) >= 700)){
       colors[poss] = 3;
       break;
     }
     Serial.print("4: ");
     Serial.println(analogRead(photo4));
-    if (analogRead(photo4) >= ave(photo1, photo2, photo3)){
+    if (analogRead(photo4) >= 700)){
       colors[poss] = 4;
       break;
     }
