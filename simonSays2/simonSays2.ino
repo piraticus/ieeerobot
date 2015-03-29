@@ -61,21 +61,21 @@ void record(int poss){
   while(true){
     Serial.print("1: ");
     Serial.print(analogRead(photo1));
-    Serial.println("  ");
+    Serial.print("  ");
     if (analogRead(photo1) >= 700)){
       colors[poss] = 1;
       break;
     }
     Serial.print("2: ");
     Serial.print(analogRead(photo2));
-    Serial.println("  ");    
+    Serial.print("  ");    
     if (analogRead(photo2) >= 700)){
       colors[poss] = 2;
       break;
     }
     Serial.print("3: ");
     Serial.print(analogRead(photo3));
-    Serial.println("  ");
+    Serial.print("  ");
     if (analogRead(photo3) >= 700)){
       colors[poss] = 3;
       break;
